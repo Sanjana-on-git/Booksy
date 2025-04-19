@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-[#FFF8F9] font-sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif;
+}
+
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 400ms, transform 400ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.book-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.btn-primary {
+  @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-secondary-100 hover:bg-secondary-200 text-secondary-800 font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+}
+
+.btn-accent {
+  @apply bg-accent-100 hover:bg-accent-200 text-accent-800 font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+}
